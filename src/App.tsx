@@ -1,9 +1,10 @@
-import ListGroup from "./components/ListGroup";
+import ThemeToggle from "./components/ThemeToggle";
+import "./App.css";
 
 function App() {
   return (
-    <div>
-      <ListGroup />
+    <div className="app-container">
+      <ThemeToggle />
     </div>
   );
 }
