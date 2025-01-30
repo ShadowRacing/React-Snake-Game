@@ -75,3 +75,115 @@ color: #ffffff;
 .theme-toggle-btn:hover {
 opacity: 0.9;
 }
+
+
+/* Game Board Styles */
+.game-board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.game-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: var(--background-dark);
+    border-radius: 8px;
+}
+
+.game-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #4a4a4a;
+    color: white;
+    margin-right: 10px;
+}
+
+.game-button.classic {
+    background-color: #242424;
+}
+
+.game-button.exit {
+    background-color: #dc3545;
+    margin-right: 0;
+}
+
+.main-container {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: var(--list-item-dark);
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.sidebar h3 {
+    color: var(--text-dark);
+    margin-top: 0;
+}
+
+.sidebar-content {
+    color: #aaa;
+}
+
+.game-area {
+    width: 600px;
+    height: 600px;
+    background-color: var(--background-dark);
+    border: 2px solid var(--list-item-dark);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-dark);
+}
+
+/* Dark theme overrides */
+.dark-theme .game-header {
+    background-color: #333;
+}
+
+.dark-theme .sidebar {
+    background-color: #242424;
+}
+
+.dark-theme .game-area {
+    background-color: #1a1a1a;
+    border-color: #333;
+}
+
+/* Light theme overrides */
+body:not(.dark-theme) .game-header {
+    background-color: #e9ecef;
+}
+
+body:not(.dark-theme) .sidebar {
+    background-color: #f8f9fa;
+}
+
+body:not(.dark-theme) .game-area {
+    background-color: #fff;
+    border-color: #dee2e6;
+}
+
+body:not(.dark-theme) .sidebar h3,
+body:not(.dark-theme) .game-area {
+    color: var(--text-light);
+}
+
+body:not(.dark-theme) .sidebar-content {
+    color: #666;
+}
