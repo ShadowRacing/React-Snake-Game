@@ -1,21 +1,31 @@
-import React from "react";
+import { CSSProperties } from "react";
 
 const GameBoard = () => {
-  const boardStyle = {
+  const boardStyle: CSSProperties = {
     display: "flex",
     flexDirection: "column" as const,
     alignItems: "center",
     gap: "20px",
     padding: "20px",
+    height: "100vh",
   };
 
-  const headerStyle = {
+  const upperHeaderStyle: CSSProperties = {
     width: "100%",
     display: "flex",
     justifyContent: "space-between",
     padding: "10px",
     backgroundColor: "#333",
     borderRadius: "8px",
+    height: "55px",
+    alignItems: "center", // Center items vertically
+  };
+
+  const gameModeStyle = {
+    color: "white",
+    fontSize: "18px",
+    fontWeight: "bold",
+    padding: "8px 16px",
   };
 
   const buttonStyle = {
@@ -37,11 +47,48 @@ const GameBoard = () => {
     color: "white",
   };
 
-  const sidebarStyle = {
+  const sidebarStyle: CSSProperties = {
     width: "200px",
     backgroundColor: "#242424",
     borderRadius: "8px",
     padding: "15px",
+    height: "600px",
+    overflowY: "auto",
+  };
+
+  const bottomHeaderStyle = {
+    width: "100%",
+    display: "flex",
+    justifyContent: "center",
+    gap: "20px",
+    padding: "10px",
+    backgroundColor: "#333",
+    borderRadius: "8px",
+    height: "150px",
+    marginTop: "auto",
+    alignItems: "center",
+  };
+
+  const statBoxStyle = {
+    backgroundColor: "#242424",
+    padding: "8px 16px",
+    borderRadius: "4px",
+    color: "white",
+    display: "flex",
+    flexDirection: "column" as const,
+    alignItems: "center",
+    minWidth: "120px",
+  };
+
+  const statLabelStyle = {
+    fontSize: "12px",
+    color: "red",
+    marginBottom: "2px",
+  };
+
+  const statValueStyle = {
+    fontSize: "16px",
+    fontWeight: "bold",
   };
 
   const mainContainerStyle = {
@@ -50,16 +97,13 @@ const GameBoard = () => {
     width: "100%",
     maxWidth: "1200px",
     margin: "0 auto",
+    flex: "1",
   };
 
   return (
     <div style={boardStyle}>
-      <div style={headerStyle}>
-        <button
-          style={{ ...buttonStyle, backgroundColor: "#242424", color: "white" }}
-        >
-          Classic Snake
-        </button>
+      <div style={upperHeaderStyle}>
+        <span style={gameModeStyle}>Classic Snake</span>
         <div>
           <button
             style={{
@@ -114,6 +158,25 @@ const GameBoard = () => {
             <p>Statistics ▸</p>
             <p>Achievements ▸</p>
           </div>
+        </div>
+      </div>
+
+      <div style={bottomHeaderStyle}>
+        <div style={statBoxStyle}>
+          <span style={statLabelStyle}>POINTS</span>
+          <span style={statValueStyle}>0</span>
+        </div>
+        <div style={statBoxStyle}>
+          <span style={statLabelStyle}>HIGHSCORE</span>
+          <span style={statValueStyle}>0</span>
+        </div>
+        <div style={statBoxStyle}>
+          <span style={statLabelStyle}>TIME</span>
+          <span style={statValueStyle}>00:00</span>
+        </div>
+        <div style={statBoxStyle}>
+          <span style={statLabelStyle}>BEST TIME</span>
+          <span style={statValueStyle}>00:00</span>
         </div>
       </div>
     </div>
